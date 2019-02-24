@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
+include_directories(../include/)
+link_libraries(leveldb)
+add_compile_options("-ldl -finstrument-functions -export-dynamic function_trace.o")
+SET(SOURCE_FILE ./demo.cpp)
+add_executable(demo ${SOURCE_FILE})
